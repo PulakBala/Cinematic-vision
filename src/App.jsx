@@ -10,7 +10,8 @@ import Details from './pages/details/Details';
 import Explore from './pages/explore/Explore';
 import SearchResult from './pages/searchResult/SearchREsult';
 import PageNoteFound from './pages/404/pageNoteFound';
-// import Header from './components/header/Header'
+import Header from './components/header/Header';
+
 // import Footer from './components/footer/Footer'
 
 //import all componenet
@@ -44,7 +45,7 @@ function App() {
   return (
     // project route
    <BrowserRouter>
-   {/* <Header/> */}
+   <Header/>
       <Routes>
          <Route path='/' element={<Home/>}></Route>
          <Route path='/:mediaType/:id' element={<Details/>}></Route>
