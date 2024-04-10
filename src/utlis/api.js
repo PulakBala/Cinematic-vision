@@ -21,6 +21,7 @@ export const fetchDataFromApi = async (url, params) => {
         });
 
         // Returning the data received from the API
+        console.log(data);
         return data;
     } catch (err) {
         // Handling errors, if any, and logging them

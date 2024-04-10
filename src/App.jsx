@@ -13,18 +13,11 @@ import PageNoteFound from './pages/404/pageNoteFound';
 import Header from './components/header/Header';
 
 // import Footer from './components/footer/Footer'
-
-//import all componenet
-
-
 function App() {
   //call action using useDispatch
   const dispatch = useDispatch()
   //read data  from the store  with the useSelectior hooks
   const {url} = useSelector((state) => state.home)
-
- 
-
   useEffect(() =>{
     fetchApiConfig();
   },[])
