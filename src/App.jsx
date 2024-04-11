@@ -11,8 +11,7 @@ import Explore from './pages/explore/Explore';
 import SearchResult from './pages/searchResult/SearchREsult';
 import PageNoteFound from './pages/404/pageNoteFound';
 import Header from './components/header/Header';
-
-// import Footer from './components/footer/Footer'
+import Footer from './components/footer/Footer'
 function App() {
   //call action using useDispatch
   const dispatch = useDispatch()
@@ -46,7 +45,7 @@ function App() {
          <Route path='/explore/:mediaType' element={<Explore/>}></Route>
          <Route path='*' element={<PageNoteFound/>}></Route>
       </Routes>
-      {/* <Footer/> */}
+      <Footer/>
    </BrowserRouter>
   )
 }

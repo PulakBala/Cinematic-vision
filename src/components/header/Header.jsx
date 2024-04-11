@@ -18,6 +18,10 @@ const Header = () => {
     const usenavigate = useNavigate();
     const location = useLocation();
 
+    useEffect(() =>{
+      window.scroll(0, 0);
+    },[location])
+
     const controlNavbar = () =>{
       console.log(window.scrollY);
       if(window.scrollY > 200){
