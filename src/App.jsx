@@ -8,10 +8,10 @@ import { getApiConfigaration, getGenres } from './store/homeSlice';
 import Home from './pages/home/Home';
 import Details from './pages/details/Details';
 import Explore from './pages/explore/Explore';
-import SearchResult from './pages/searchResult/SearchREsult';
 import PageNoteFound from './pages/404/pageNoteFound';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer'
+import SearchResult from './pages/searchResult/SearchResult';
 function App() {
   //call action using useDispatch
   const dispatch = useDispatch()
@@ -23,7 +23,6 @@ function App() {
   },[])
   const fetchApiConfig = () =>{
     fetchDataFromApi("/configuration")
-        // console.log(res);
         .then((res) =>{
           const url = {
             backdrop: res.images.secure_base_url + "original",
