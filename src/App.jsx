@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 //
 import { useSelector, useDispatch } from 'react-redux'
 //import actions work
-import { getApiConfigaration } from './store/homeSlice';
+import { getApiConfigaration, getGenres } from './store/homeSlice';
 import Home from './pages/home/Home';
 import Details from './pages/details/Details';
 import Explore from './pages/explore/Explore';
@@ -19,6 +19,7 @@ function App() {
   const {url} = useSelector((state) => state.home)
   useEffect(() =>{
     fetchApiConfig();
+    genresCall();
   },[])
   const fetchApiConfig = () =>{
     fetchDataFromApi("/configuration")
@@ -34,6 +35,24 @@ function App() {
         
      
   }
+
+  const genresCall = async () => {
+    let promises = [];
+    let endPoints = ["tv", "movie"];
+    let allGenres = {};
+
+    endPoints.forEach((url) => {
+        promises.push(fetchDataFromApi(`/genre/${url}/list`));
+    });
+
+    const data = await Promise.all(promises);
+    console.log(data);
+    data.map(({ genres }) => {
+        return genres.map((item) => (allGenres[item.id] = item));
+    });
+
+    dispatch(getGenres(allGenres));
+};
   return (
     // project route
    <BrowserRouter>
