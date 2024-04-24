@@ -13,7 +13,7 @@ import PosterFallback from "../../assets/no-poster.png";
 import './style.scss'
 import CircaleRating from "../circaleRating/CircaleRating";
 import Genres from "../geners/Genres";
-const Carousel = ({ data, loading }) => {
+const Carousel = ({ data, loading, endpoint }) => {
   const carouselContainer = useRef();
   const { url } = useSelector((state) => state.home);
   const navigate = useNavigate();
