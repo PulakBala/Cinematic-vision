@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import './header.scss'
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/movix-logo.svg";
+import logo from "../../assets/cinematic-logo.avif";
 
 const Header = () => {
     const [show, setShow] = useState("top");
@@ -67,7 +67,7 @@ const Header = () => {
       if(type === 'movie'){
         usenavigate("/explore/movie")
       }else{
-        usenavigate("/eplore/tv");
+        usenavigate("/explore/tv");
       }
     }
 
